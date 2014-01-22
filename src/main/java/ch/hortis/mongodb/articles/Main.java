@@ -5,8 +5,6 @@ import org.glassfish.jersey.grizzly2.httpserver.GrizzlyHttpServerFactory;
 import org.glassfish.jersey.jackson.JacksonFeature;
 import org.glassfish.jersey.media.multipart.MultiPartFeature;
 import org.glassfish.jersey.server.ResourceConfig;
-import org.glassfish.jersey.server.ServerProperties;
-import org.glassfish.jersey.server.TracingConfig;
 
 import java.io.IOException;
 import java.net.URI;
@@ -27,7 +25,6 @@ public class Main {
         // create a resource config that scans for JAX-RS resources and providers
         // in ch.hortis package
         final ResourceConfig rc = new ResourceConfig()
-                .property(ServerProperties.TRACING, TracingConfig.ON_DEMAND.name())
                 .registerInstances(new ServiceBinder()) // HK2 dependency injection mapping
                 .packages(true, "ch.hortis.mongodb.articles") // servlet mapping
                 .register(MultiPartFeature.class) // multi-part MIME type support
