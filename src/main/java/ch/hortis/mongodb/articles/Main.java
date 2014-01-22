@@ -28,7 +28,7 @@ public class Main {
                 .registerInstances(new ServiceBinder()) // HK2 dependency injection mapping
                 .packages(true, "ch.hortis.mongodb.articles") // servlet mapping
                 .register(MultiPartFeature.class) // multi-part MIME type support
-                .register(ObjectMapperProvider.class)
+//                .register(ObjectMapperProvider.class)
                 .register(JacksonFeature.class);
 //        rc.register(new LoggingFilter());
 
